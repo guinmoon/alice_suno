@@ -1,0 +1,216 @@
+[
+    {
+        "id": "edd4c14739b33263",
+        "type": "tab",
+        "label": "Suno",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "7c04a71869c67f10",
+        "type": "mqtt in",
+        "z": "edd4c14739b33263",
+        "name": "",
+        "topic": "suno",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "6db744d6b060fb35",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 370,
+        "y": 160,
+        "wires": [
+            [
+                "247ca00b7e23d463",
+                "69394707436e580f"
+            ]
+        ]
+    },
+    {
+        "id": "938ddb44dcf92967",
+        "type": "debug",
+        "z": "edd4c14739b33263",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "5e39af4014fcf512",
+        "type": "alice-local-out",
+        "z": "edd4c14739b33263",
+        "name": "Play Sound",
+        "token": "fb1524656ce0f66b",
+        "station_id": "XK00000000000000515800003be983c2",
+        "debugFlag": true,
+        "input": "tts",
+        "payload": "payload",
+        "payloadType": "msg",
+        "volume": "50",
+        "volumeFlag": false,
+        "stopListening": true,
+        "pauseMusic": true,
+        "noTrack": "",
+        "whisper": false,
+        "ttsVoice": "",
+        "ttsEffect": "",
+        "x": 870,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "247ca00b7e23d463",
+        "type": "function",
+        "z": "edd4c14739b33263",
+        "name": "Песня готова",
+        "func": "msg.payload = \"Песня готова\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 160,
+        "wires": [
+            [
+                "472ea4fdad246e3b"
+            ]
+        ]
+    },
+    {
+        "id": "69394707436e580f",
+        "type": "delay",
+        "z": "edd4c14739b33263",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 630,
+        "y": 300,
+        "wires": [
+            [
+                "938ddb44dcf92967",
+                "5e39af4014fcf512"
+            ]
+        ]
+    },
+    {
+        "id": "472ea4fdad246e3b",
+        "type": "alice-local-out",
+        "z": "edd4c14739b33263",
+        "name": "Play Sound",
+        "token": "fb1524656ce0f66b",
+        "station_id": "XK00000000000000515800003be983c2",
+        "debugFlag": true,
+        "input": "tts",
+        "payload": "payload",
+        "payloadType": "msg",
+        "volume": "50",
+        "volumeFlag": false,
+        "stopListening": true,
+        "pauseMusic": true,
+        "noTrack": "",
+        "whisper": false,
+        "ttsVoice": "",
+        "ttsEffect": "",
+        "x": 870,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "689576ad4bbe0a7c",
+        "type": "mqtt in",
+        "z": "edd4c14739b33263",
+        "name": "",
+        "topic": "suno_tele",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "6db744d6b060fb35",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 380,
+        "y": 100,
+        "wires": [
+            [
+                "12b0d18599cd66a0"
+            ]
+        ]
+    },
+    {
+        "id": "12b0d18599cd66a0",
+        "type": "function",
+        "z": "edd4c14739b33263",
+        "name": "Песня сгенерировалась",
+        "func": "msg.payload = \"Генерация завершена, скачивание.\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 100,
+        "wires": [
+            [
+                "472ea4fdad246e3b",
+                "938ddb44dcf92967"
+            ]
+        ]
+    },
+    {
+        "id": "6db744d6b060fb35",
+        "type": "mqtt-broker",
+        "name": "130.193.51.17",
+        "broker": "130.193.51.17",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "fb1524656ce0f66b",
+        "type": "yandex-login",
+        "name": "",
+        "debugFlag": true
+    }
+]

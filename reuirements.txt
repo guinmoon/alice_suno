@@ -1,0 +1,7 @@
+aiohttp>=3.3.2
+attrs==20.3.0
+curl_cffi
+fake-useragent
+requests
+rich
+python-dotenv
