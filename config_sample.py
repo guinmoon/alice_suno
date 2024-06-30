@@ -1,6 +1,7 @@
 WEBHOOK_URL_PATH = '/'  # webhook endpoint
 SKILL_ID = '37cbad04-a60fasdfasde-4a9b-833b-1easfasdfasd' # идентификатор навыка
-OAUTH_TOKEN = 'OAuth y0_AgAAAAT7owAAAAEFJchFAACL53UQnAhJ_DA4BbRgyDFEnQ' # токен для загрузки музыки в навык как получить см тут 
+OAUTH_TOKEN = 'OAuth y0_AgAAAAT7owAAAAEFJchFAACL53UQnAhJ_DA4BbRgyDFEnQ' # токен для загрузки музыки в навык как получить см тут
+# https://yandex.ru/dev/dialogs/alice/doc/ru/resource-upload 
 
 WEBAPP_HOST = 'localhost' # отсавляем как есть
 WEBAPP_PORT = 8080 # порт на который nginx пробрасывает запросы от yandex
